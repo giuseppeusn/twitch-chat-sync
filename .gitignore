@@ -1,0 +1,34 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Editors & IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node / Build / Packages
+node_modules/
+dist/
+build/
+*.tgz
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Chrome Extension Packaging
+*.zip
+*.crx
+*.pem
+
+# Environment & Local Overrides
+.env
+.env.*
+*.log
+
+# Documentation
+docs

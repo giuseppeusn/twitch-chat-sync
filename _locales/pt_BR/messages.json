@@ -1,0 +1,110 @@
+{
+  "extName": { "message": "Twitch Chat Sync for YouTube" },
+  "extDescription": { "message": "Sincroniza automaticamente o chat de um VOD da Twitch com cortes no YouTube 100% client-side usando storyboards e correspondência visual." },
+  "actionTitle": { "message": "Twitch Chat Sync — Exibir / fechar chat" },
+  "panelTitle": { "message": "Twitch Chat Sync" },
+  "settingsBtnTitle": { "message": "Configurações do chat" },
+  "collapseBtnTitle": { "message": "Recolher / expandir" },
+  "closeBtnTitle": { "message": "Fechar chat" },
+  "urlPlaceholder": { "message": "Cole o link do VOD da Twitch..." },
+  "syncBtn": { "message": "Sincronizar" },
+  "syncingBtn": { "message": "Sincronizando..." },
+  "statusIdle": { "message": "Cole a URL de um VOD da Twitch para iniciar." },
+  "vodLabel": { "message": "VOD" },
+  "manualAdjustTitle": { "message": "Ajuste fino manual" },
+  "chatPlaceholder": { "message": "O chat sincronizado aparecerá aqui." },
+  "resumeScroll": { "message": "Chat pausado • Retomar rolagem" },
+  "settingsTitle": { "message": "Configurações do chat" },
+  "closeLabel": { "message": "Fechar" },
+  "fontSizeLabel": { "message": "Tamanho do texto" },
+  "previewLabel": { "message": "Preview" },
+  "previewSampleText": { "message": "Salve chat!" },
+  "optTwitchEmotes": { "message": "Emotes da Twitch" },
+  "optBttvEmotes": { "message": "Emotes do BTTV" },
+  "opt7tvEmotes": { "message": "Emotes do 7TV" },
+  "optTimestamps": { "message": "Minutagem das mensagens" },
+  "optHideSubs": { "message": "Ocultar mensagens de inscrição" },
+  "overlayTitle": { "message": "Sincronizando chat da Twitch" },
+  "overlayPreparing": { "message": "Preparando sincronização..." },
+  "overlayHint": { "message": "Controles do player bloqueados durante a sincronização" },
+  "waitingMessages": {
+    "message": "Aguardando mensagens em $TIME$...",
+    "placeholders": { "time": { "content": "$1" } }
+  },
+  "errorInvalidUrl": { "message": "URL inválida. Cole um link como https://www.twitch.tv/videos/123456789" },
+  "errorNoPlayer": { "message": "Player do YouTube não encontrado nesta página." },
+  "statusFetchingStoryboards": { "message": "Buscando storyboards da Twitch e do YouTube..." },
+  "statusDownloadingStoryboards": {
+    "message": "Baixando storyboards ($TW$ Twitch + $YT$ YouTube)...",
+    "placeholders": {
+      "tw": { "content": "$1" },
+      "yt": { "content": "$2" }
+    }
+  },
+  "statusAligningTimeline": { "message": "Alinhando linha do tempo completa (multi-frame)..." },
+  "statusRefiningPrecision": { "message": "Refinando precisão para ±1 segundo (multi-âncora)..." },
+  "statusCapturingSamples": { "message": "Capturando amostras de frames do YouTube..." },
+  "statusComparingFrames": {
+    "message": "Comparando frames ($COUNT$ sprites)...",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "statusComparingProgress": {
+    "message": "Comparando frames ($SCANNED$/$TOTAL$) • $MB$ MB",
+    "placeholders": {
+      "scanned": { "content": "$1" },
+      "total": { "content": "$2" },
+      "mb": { "content": "$3" }
+    }
+  },
+  "statusDownloadingChat": {
+    "message": "Baixando chat a partir de $TIME$...",
+    "placeholders": { "time": { "content": "$1" } }
+  },
+  "statusLoadingChatAt": {
+    "message": "Carregando chat em $TIME$...",
+    "placeholders": { "time": { "content": "$1" } }
+  },
+  "statusSynced": {
+    "message": "Sincronizado em $TIME$$CUTS$ • ($CONFIDENCE$% match)",
+    "placeholders": {
+      "time": { "content": "$1" },
+      "cuts": { "content": "$2" },
+      "confidence": { "content": "$3" }
+    }
+  },
+  "statusSyncedCutsSuffix": {
+    "message": " • $COUNT$ cortes",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "errorSyncFailed": { "message": "Falha ao sincronizar o VOD." },
+  "errorChatLoadFailed": { "message": "Erro ao carregar mensagens para este instante." },
+  "errorSyncCancelled": { "message": "Sincronização cancelada." },
+  "errorImageDecode": { "message": "Falha ao decodificar imagem do storyboard." },
+  "errorSeekTimeout": { "message": "Tempo esgotado aguardando o player do YouTube carregar o frame em 00:05." },
+  "errorAdShowing": { "message": "Um anúncio está tocando no YouTube. Aguarde ou pule o anúncio e tente novamente." },
+  "errorPlayerNotReady": { "message": "O player de vídeo do YouTube ainda não carregou." },
+  "errorNoStoryboardFrames": { "message": "Nenhum frame de storyboard pôde ser analisado." },
+  "errorAlignStoryboards": { "message": "Não foi possível alinhar os storyboards do YouTube e da Twitch." },
+  "errorUnknownWorker": { "message": "Erro desconhecido no service worker." },
+  "bgVodNotFound": {
+    "message": "VOD \"$VODID$\" não encontrado na Twitch (pode ter expirado, ser exclusivo para inscritos ou o ID está incorreto).",
+    "placeholders": { "vodid": { "content": "$1" } }
+  },
+  "bgMissingSeekPreviews": { "message": "A Twitch não retornou seekPreviewsURL para este VOD. O vídeo pode estar em processamento." },
+  "bgStoryboardManifestHttp": {
+    "message": "Falha ao baixar manifesto de storyboards (HTTP $STATUS$).",
+    "placeholders": { "status": { "content": "$1" } }
+  },
+  "bgStoryboardManifestEmpty": { "message": "Manifesto de storyboards vazio ou em formato inesperado." },
+  "bgNoValidStoryboardTier": { "message": "Nenhum tier de storyboard válido encontrado no manifesto." },
+  "bgYoutubeFetchHttp": {
+    "message": "Falha ao buscar página do YouTube (HTTP $STATUS$).",
+    "placeholders": { "status": { "content": "$1" } }
+  },
+  "bgHlsNotEnabled": { "message": "Refinamento HLS ainda não ativado; usando offset dos storyboards." },
+  "bgUnknownAction": {
+    "message": "Ação desconhecida: $ACTION$",
+    "placeholders": { "action": { "content": "$1" } }
+  },
+  "anonymousAuthor": { "message": "Anônimo" }
+}

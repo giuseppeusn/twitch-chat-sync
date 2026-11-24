@@ -1,0 +1,110 @@
+{
+  "extName": { "message": "Twitch Chat Sync for YouTube" },
+  "extDescription": { "message": "Automatically syncs Twitch VOD chat with YouTube videos 100% client-side using storyboards and visual matching." },
+  "actionTitle": { "message": "Twitch Chat Sync — Show / hide chat" },
+  "panelTitle": { "message": "Twitch Chat Sync" },
+  "settingsBtnTitle": { "message": "Chat settings" },
+  "collapseBtnTitle": { "message": "Collapse / expand" },
+  "closeBtnTitle": { "message": "Close chat" },
+  "urlPlaceholder": { "message": "Paste Twitch VOD link..." },
+  "syncBtn": { "message": "Sync" },
+  "syncingBtn": { "message": "Syncing..." },
+  "statusIdle": { "message": "Paste a Twitch VOD URL to start." },
+  "vodLabel": { "message": "VOD" },
+  "manualAdjustTitle": { "message": "Manual fine-tuning" },
+  "chatPlaceholder": { "message": "Synced chat will appear here." },
+  "resumeScroll": { "message": "Chat paused • Resume scrolling" },
+  "settingsTitle": { "message": "Chat settings" },
+  "closeLabel": { "message": "Close" },
+  "fontSizeLabel": { "message": "Text size" },
+  "previewLabel": { "message": "Preview" },
+  "previewSampleText": { "message": "Hey chat!" },
+  "optTwitchEmotes": { "message": "Twitch emotes" },
+  "optBttvEmotes": { "message": "BTTV emotes" },
+  "opt7tvEmotes": { "message": "7TV emotes" },
+  "optTimestamps": { "message": "Message timestamps" },
+  "optHideSubs": { "message": "Hide subscription messages" },
+  "overlayTitle": { "message": "Syncing Twitch chat" },
+  "overlayPreparing": { "message": "Preparing sync..." },
+  "overlayHint": { "message": "Player controls locked during sync" },
+  "waitingMessages": {
+    "message": "Waiting for messages at $TIME$...",
+    "placeholders": { "time": { "content": "$1" } }
+  },
+  "errorInvalidUrl": { "message": "Invalid URL. Paste a link like https://www.twitch.tv/videos/123456789" },
+  "errorNoPlayer": { "message": "YouTube player not found on this page." },
+  "statusFetchingStoryboards": { "message": "Fetching Twitch and YouTube storyboards..." },
+  "statusDownloadingStoryboards": {
+    "message": "Downloading storyboards ($TW$ Twitch + $YT$ YouTube)...",
+    "placeholders": {
+      "tw": { "content": "$1" },
+      "yt": { "content": "$2" }
+    }
+  },
+  "statusAligningTimeline": { "message": "Aligning full timeline (multi-frame)..." },
+  "statusRefiningPrecision": { "message": "Refining precision to ±1 second (multi-anchor)..." },
+  "statusCapturingSamples": { "message": "Capturing YouTube frame samples..." },
+  "statusComparingFrames": {
+    "message": "Comparing frames ($COUNT$ sprites)...",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "statusComparingProgress": {
+    "message": "Comparing frames ($SCANNED$/$TOTAL$) • $MB$ MB",
+    "placeholders": {
+      "scanned": { "content": "$1" },
+      "total": { "content": "$2" },
+      "mb": { "content": "$3" }
+    }
+  },
+  "statusDownloadingChat": {
+    "message": "Downloading chat from $TIME$...",
+    "placeholders": { "time": { "content": "$1" } }
+  },
+  "statusLoadingChatAt": {
+    "message": "Loading chat at $TIME$...",
+    "placeholders": { "time": { "content": "$1" } }
+  },
+  "statusSynced": {
+    "message": "Synced at $TIME$$CUTS$ • ($CONFIDENCE$% match)",
+    "placeholders": {
+      "time": { "content": "$1" },
+      "cuts": { "content": "$2" },
+      "confidence": { "content": "$3" }
+    }
+  },
+  "statusSyncedCutsSuffix": {
+    "message": " • $COUNT$ cuts",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "errorSyncFailed": { "message": "Failed to sync VOD." },
+  "errorChatLoadFailed": { "message": "Failed to load messages for this timestamp." },
+  "errorSyncCancelled": { "message": "Sync cancelled." },
+  "errorImageDecode": { "message": "Failed to decode storyboard image." },
+  "errorSeekTimeout": { "message": "Timed out waiting for YouTube player to load frame at 00:05." },
+  "errorAdShowing": { "message": "An ad is playing on YouTube. Wait or skip the ad and try again." },
+  "errorPlayerNotReady": { "message": "YouTube video player is not ready yet." },
+  "errorNoStoryboardFrames": { "message": "No storyboard frames could be analyzed." },
+  "errorAlignStoryboards": { "message": "Could not align YouTube and Twitch storyboards." },
+  "errorUnknownWorker": { "message": "Unknown service worker error." },
+  "bgVodNotFound": {
+    "message": "VOD \"$VODID$\" not found on Twitch (it may have expired, be sub-only, or have an invalid ID).",
+    "placeholders": { "vodid": { "content": "$1" } }
+  },
+  "bgMissingSeekPreviews": { "message": "Twitch did not return seekPreviewsURL for this VOD. It may still be processing." },
+  "bgStoryboardManifestHttp": {
+    "message": "Failed to download storyboard manifest (HTTP $STATUS$).",
+    "placeholders": { "status": { "content": "$1" } }
+  },
+  "bgStoryboardManifestEmpty": { "message": "Storyboard manifest is empty or has an unexpected format." },
+  "bgNoValidStoryboardTier": { "message": "No valid storyboard tier found in manifest." },
+  "bgYoutubeFetchHttp": {
+    "message": "Failed to fetch YouTube page (HTTP $STATUS$).",
+    "placeholders": { "status": { "content": "$1" } }
+  },
+  "bgHlsNotEnabled": { "message": "HLS refinement is not enabled yet; using storyboard offset." },
+  "bgUnknownAction": {
+    "message": "Unknown action: $ACTION$",
+    "placeholders": { "action": { "content": "$1" } }
+  },
+  "anonymousAuthor": { "message": "Anonymous" }
+}
