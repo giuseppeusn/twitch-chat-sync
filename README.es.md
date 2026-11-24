@@ -27,11 +27,11 @@ Una extensión de Chrome (Manifest V3) que descubre automáticamente el minuto e
 
 1. Clona o descarga este repositorio:
    ```bash
-   git clone https://github.com/<tu-usuario>/twtyt-chat.git
+   git clone https://github.com/giuseppeusn/twitch-chat-sync
    ```
 2. Abre Google Chrome y ve a `chrome://extensions`.
 3. Activa el **Modo de desarrollador** en la esquina superior derecha.
-4. Haz clic en **Cargar descomprimida** (*Load unpacked*) y selecciona la carpeta raíz del proyecto (`twtyt-chat`).
+4. Haz clic en **Cargar descomprimida** (_Load unpacked_) y selecciona la carpeta raíz del proyecto (`twitch-chat-sync`).
 
 ---
 

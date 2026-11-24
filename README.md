@@ -27,11 +27,11 @@ A Chrome extension (Manifest V3) that automatically discovers the exact start ti
 
 1. Clone or download this repository:
    ```bash
-   git clone https://github.com/<your-username>/twtyt-chat.git
+   git clone https://github.com/giuseppeusn/twitch-chat-sync
    ```
 2. Open Google Chrome and navigate to `chrome://extensions`.
 3. Enable **Developer mode** in the top-right corner.
-4. Click **Load unpacked** and select the project root folder (`twtyt-chat`).
+4. Click **Load unpacked** and select the project root folder (`twitch-chat-sync`).
 
 ---
 
