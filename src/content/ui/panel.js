@@ -137,7 +137,14 @@
 
     const rect = playerEl.getBoundingClientRect();
     if (rect.height >= 200) {
-      root.style.height = `${Math.round(rect.height)}px`;
+      const targetHeight = Math.max(320, Math.round(rect.height));
+      if (root.style.height !== `${targetHeight}px`) {
+        state.lastProgrammaticScrollAt = Date.now();
+        root.style.height = `${targetHeight}px`;
+        if (state.isSynced && !state.isAutoScrollPaused) {
+          TCS.chat.renderer.scheduleScrollToBottom();
+        }
+      }
     }
   }
 

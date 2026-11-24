@@ -581,6 +581,9 @@
       applySettingsToUI();
       observePlayerHeight();
       notifyYoutubePlayerResize();
+      if (state.isSynced) {
+        renderChatForCurrentTime(true);
+      }
       tryAutoSyncFromCache(ytId);
     } else {
       syncPanelHeightToPlayer();

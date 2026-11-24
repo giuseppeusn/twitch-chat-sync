@@ -59,6 +59,10 @@ ytd-watch-flexy:not([theater]) #secondary:has(#tcs-root-panel) {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
 }
 
+#tcs-root-panel.tcs-panel:not(.tcs-collapsed) {
+  min-height: 320px;
+}
+
 .tcs-body {
   flex: 1;
   min-height: 0;
@@ -346,7 +350,8 @@ ytd-watch-flexy:not([theater]) #secondary:has(#tcs-root-panel) {
 .tcs-chat-wrapper {
   position: relative;
   flex: 1;
-  min-height: 200px;
+  min-height: 0;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   background: var(--tcs-bg);
@@ -354,6 +359,7 @@ ytd-watch-flexy:not([theater]) #secondary:has(#tcs-root-panel) {
 
 .tcs-chat-list {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   padding: 10px 12px;
   display: flex;
