@@ -3,10 +3,14 @@
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-9146FF?style=flat-square)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 [![100% Client-Side](https://img.shields.io/badge/Arquitectura-100%25%20client--side-blue?style=flat-square)](#cómo-funciona)
+[![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?style=flat-square&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/giuseppeusn)
 
 [English](README.md) | [Português (BR)](README.pt-BR.md) | **Español**
 
 Una extensión de Chrome (Manifest V3) que descubre automáticamente el minuto exacto de un video de YouTube dentro de un VOD de Twitch y muestra el chat sincronizado junto al reproductor — **100% client-side y sin backend**.
+
+![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Próximamente-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)
+[![Descargar Release](https://img.shields.io/badge/GitHub_Release-Descargar_ZIP-9146FF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/giuseppeusn/twitch-chat-sync/releases/latest)
 
 ---
 
@@ -23,11 +27,32 @@ Una extensión de Chrome (Manifest V3) que descubre automáticamente el minuto e
 
 ---
 
-## Instalación (modo desarrollador / load unpacked)
+## Apoya el proyecto
 
-1. Clona o descarga este repositorio:
+Esta extensión es gratuita, de código abierto y no tiene anuncios ni rastreo. Si te resulta útil y quieres ayudar a mantenerla activa, actualizada frente a cambios de Twitch y YouTube y con mejoras continuas, considera convertirte en patrocinador en [GitHub Sponsors](https://github.com/sponsors/giuseppeusn). También puedes apoyar dejando una estrella en el repositorio, reportando errores o compartiéndola con otras personas.
+
+[![Apoyar en GitHub Sponsors](https://img.shields.io/badge/Sponsor-giuseppeusn-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/giuseppeusn)
+
+---
+
+## Instalación
+
+### Opción 1: Chrome Web Store (próximamente)
+
+Próximamente la extensión estará disponible directamente en Chrome Web Store.
+
+### Opción 2: descargar la última release
+
+1. Descarga el archivo `.zip` más reciente desde [GitHub Releases](https://github.com/giuseppeusn/twitch-chat-sync/releases/latest) y extráelo.
+2. Abre Google Chrome y ve a `chrome://extensions`.
+3. Activa el **Modo de desarrollador** en la esquina superior derecha.
+4. Haz clic en **Cargar descomprimida** (_Load unpacked_) y selecciona la carpeta extraída.
+
+### Opción 3: clonar el repositorio
+
+1. Clona este repositorio:
    ```bash
-   git clone https://github.com/giuseppeusn/twitch-chat-sync
+   git clone https://github.com/giuseppeusn/twitch-chat-sync.git
    ```
 2. Abre Google Chrome y ve a `chrome://extensions`.
 3. Activa el **Modo de desarrollador** en la esquina superior derecha.
