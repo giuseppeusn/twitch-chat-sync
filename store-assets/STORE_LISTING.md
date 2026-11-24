@@ -43,3 +43,26 @@ Código aberto, novidades e apoio:
 • Reportar problemas ou sugerir melhorias: https://github.com/giuseppeusn/twitch-chat-sync/issues
 • Novidades das versões (changelog): https://github.com/giuseppeusn/twitch-chat-sync/releases
 • Apoie o projeto (GitHub Sponsors): https://github.com/sponsors/giuseppeusn
+
+---
+
+## Español (`es`)
+
+Sincroniza automáticamente el chat de un VOD de Twitch con clips y videos de YouTube — 100% client-side y sin servidores externos.
+
+Solo pega el enlace o ID del VOD de Twitch mientras ves un video en YouTube: la extensión encuentra automáticamente el minuto exacto mediante coincidencia visual de storyboards, detecta cortes editados y muestra el chat original sincronizado junto al reproductor.
+
+Características principales:
+• Sincronización visual automática con refinamiento de ±1s en los fotogramas del video
+• Detección automática de cortes editados en videos de YouTube
+• Compatibilidad completa con insignias globales y de canal de Twitch, emotes nativos de Twitch, BetterTTV (BTTV) y 7TV
+• Controles de ajuste fino manual (-30s, -5s, -1s, +1s, +5s, +30s) y pausa inteligente de desplazamiento automático
+• Panel en modo oscuro personalizable con tamaño de texto ajustable, marcas de tiempo y filtro de suscripciones
+• Caché local de 7 días por video para restaurar sincronizaciones anteriores automáticamente
+• 100% privado: funciona localmente en tu navegador, sin recopilación ni envío de datos
+
+Código abierto, novedades y apoyo:
+• Código fuente y documentación: https://github.com/giuseppeusn/twitch-chat-sync
+• Reportar errores o sugerir mejoras: https://github.com/giuseppeusn/twitch-chat-sync/issues
+• Notas de versión (changelog): https://github.com/giuseppeusn/twitch-chat-sync/releases
+• Apoya el proyecto (GitHub Sponsors): https://github.com/sponsors/giuseppeusn
