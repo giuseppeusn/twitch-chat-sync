@@ -79,6 +79,18 @@ For technical details, see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and [doc
 
 ---
 
+## Known issues
+
+### Storyboard timeline drift on very long VODs (2–4 min offset)
+
+- **When it happens:** Occasionally on very long Twitch VODs (e.g. 10h–15h+), the synced chat may appear shifted by a few minutes even though the visual match confidence is high (90%+). Longer YouTube videos (2h+) with multiple segments can also take noticeably longer to sync due to downloading ~800+ YouTube storyboard frames and running multi-anchor seeks across segments.
+- **Why it happens:** Twitch caps VOD storyboards (`seekPreviewsURL`) at **200 frames** regardless of stream length, assuming linear spacing between thumbnails. On 10h–15h+ VODs, each thumbnail is spaced 3–4+ minutes apart, and stream discontinuities (disconnects/restarts, ad stitches, or re-muxed copyright-muted sections) can cause the storyboard's timestamp index to drift from the actual VOD video/chat clock. Because the extension matches YouTube frames against the Twitch storyboard, it accurately locks onto the storyboard timestamp — which itself is offset from the chat timeline.
+- **Cases where this may appear:** Advanced timestamps (e.g. 10h+) in very long VODs, streams with mid-broadcast disconnects or ad breaks, and VODs containing muted/reprocessed segments before the target clip.
+- **Why an HLS-based alternative is not used:** Validating offsets against the raw Twitch HLS stream (`.m3u8` / `.ts` via `PlaybackAccessToken`, `usher.ttvnw.net`, and `WebCodecs VideoDecoder`) would require pure-JS video demuxing without external libraries, downloading several megabytes of `.ts` segments instead of ~250–450 KB of sprite sheets (making sync much slower and heavier), relying on fragile private playback tokens, and breaking on subscriber-only VODs.
+- **Workaround:** Use the **manual offset adjustment** in the extension panel; your adjustment is automatically saved per YouTube video.
+
+---
+
 ## Project structure
 
 ```text

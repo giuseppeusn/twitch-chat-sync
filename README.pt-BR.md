@@ -79,6 +79,18 @@ Para detalhes técnicos, consulte [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) e
 
 ---
 
+## Problemas conhecidos
+
+### Desvio de timeline do storyboard em VODs muito longas (diferença de 2–4 min)
+
+- **Quando acontece:** Ocasionalmente, em VODs muito longas da Twitch (ex.: 10h–15h+), o chat sincronizado pode aparecer deslocado em alguns minutos mesmo quando a confiança visual do alinhamento é alta (90%+). Vídeos longos no YouTube (2h+) divididos em vários segmentos também podem demorar mais para sincronizar por baixarem ~800+ frames de storyboard e executarem *seeks* multi-âncora em cada segmento.
+- **Por que acontece:** A Twitch limita o storyboard da VOD (`seekPreviewsURL`) a no máximo **200 frames**, independentemente da duração da live, assumindo espaçamento linear entre miniaturas. Em VODs de 10h–15h+, cada thumbnail fica espaçada por 3–4+ minutos, e descontinuidades na transmissão (quedas/reconexões, inserção de anúncios ou reprocessamento de trechos mutados por copyright) podem acumular um desvio entre o índice de tempo do storyboard e o relógio real do vídeo/chat. Como a extensão alinha o YouTube com o storyboard da Twitch, ela encontra o ponto visual exato do storyboard — que já está deslocado em relação ao chat.
+- **Em que casos pode aparecer:** Trechos avançados (ex.: 10h+) em VODs muito longas, lives com quedas de conexão ou pausas para anúncios no meio da transmissão, e VODs com trechos mutados/reprocessados antes do momento assistido.
+- **Por que não é viável adotar outra solução (validação via HLS):** Validar o offset contra o stream HLS bruto da Twitch (`.m3u8` / `.ts` via `PlaybackAccessToken`, `usher.ttvnw.net` e `WebCodecs VideoDecoder`) exigiria fazer *demux* de vídeo em JavaScript puro sem bibliotecas externas, baixar vários megabytes de segmentos `.ts` em vez de ~250–450 KB de *sprite sheets* (deixando a sincronização bem mais lenta e pesada), depender de tokens internos mais frágeis da Twitch e ainda falharia em VODs exclusivas para inscritos (*sub-only*).
+- **Contorno:** Utilize o **ajuste manual** no painel da extensão; o valor ajustado fica salvo automaticamente para aquele vídeo do YouTube.
+
+---
+
 ## Privacidade
 
 Esta extensão opera **100% client-side**. Nenhum dado de usuário, histórico ou telemetria é coletado ou enviado a servidores externos. Configurações e cache ficam armazenados apenas localmente no navegador.

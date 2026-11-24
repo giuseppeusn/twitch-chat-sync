@@ -79,6 +79,18 @@ Para más detalles técnicos, consulta [docs/ARCHITECTURE.md](docs/ARCHITECTURE.
 
 ---
 
+## Problemas conocidos
+
+### Desfase de línea temporal del storyboard en VODs muy largos (diferencia de 2–4 min)
+
+- **Cuándo ocurre:** Ocasionalmente, en VODs muy largos de Twitch (p. ej. 10h–15h+), el chat sincronizado puede aparecer desplazado unos minutos incluso cuando la confianza visual es alta (90%+). Videos largos de YouTube (2h+) con múltiples segmentos también pueden tardar más en sincronizar al descargar ~800+ fotogramas de storyboard y ejecutar *seeks* multiancla en cada segmento.
+- **Por qué ocurre:** Twitch limita el storyboard del VOD (`seekPreviewsURL`) a un máximo de **200 fotogramas** sin importar la duración del directo, asumiendo un espaciado lineal entre miniaturas. En VODs de 10h–15h+, cada miniatura queda separada por 3–4+ minutos, y las discontinuidades de la transmisión (caídas/reconexiones, anuncios o segmentos silenciados por copyright reprocesados) pueden acumular un desfase entre el índice temporal del storyboard y el reloj real del video/chat. Como la extensión alinea YouTube contra el storyboard de Twitch, encuentra el punto visual exacto del storyboard, que ya está desplazado respecto al chat.
+- **En qué casos puede aparecer:** Tramos avanzados (p. ej. 10h+) en VODs muy largos, directos con desconexiones o cortes publicitarios intermedios y VODs con tramos silenciados/reprocesados antes del clip.
+- **Por qué no es viable otra solución (validación vía HLS):** Validar el desplazamiento contra el flujo HLS real de Twitch (`.m3u8` / `.ts` mediante `PlaybackAccessToken`, `usher.ttvnw.net` y `WebCodecs VideoDecoder`) requeriría hacer *demux* de video en JavaScript puro sin librerías externas, descargar varios megabytes de segmentos `.ts` en lugar de ~250–450 KB de *sprite sheets* (volviendo la sincronización mucho más lenta y pesada), depender de tokens privados más frágiles y fallaría en VODs exclusivos para suscriptores (*sub-only*).
+- **Solución temporal:** Usa el **ajuste manual** en el panel de la extensión; el ajuste se guarda automáticamente para ese video de YouTube.
+
+---
+
 ## Privacidad
 
 Esta extensión funciona **100% client-side**. No se recopilan ni envían datos de usuario, historial ni telemetría a ningún servidor externo.
